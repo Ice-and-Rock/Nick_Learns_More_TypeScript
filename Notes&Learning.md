@@ -31,7 +31,8 @@ When building an interface, you can make certain fields optional using '?'...
 
     // the question mark above and below means they're optional
     addNote?: (note: string) => string;
-}```
+}
+```
 
 *An enum*: allows you to define a value with limitied options, such as a drop down menu (with two options)
 
@@ -95,5 +96,6 @@ remember you can define type of objects using enums or literal types outside of 
   displayName: string,
   subCategories: { name: string, displayName: string }[]
 }```
+
 
 
