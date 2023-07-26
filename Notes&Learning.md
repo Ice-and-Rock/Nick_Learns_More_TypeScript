@@ -12,7 +12,7 @@ There are 7 primitive types:
 
 The more informaiton you give TypeScript, the more it can help you.
 
-#Chapter 2
+##Chapter 2
 _Type inference_: TypeScript figures out what the type is automatically which can guide you through a project
 
 - you can use the 'any' type to opt out of typescripts strict rules. Be wary, though
@@ -84,7 +84,8 @@ Error reporting:
 }
 ~~~
 
-#Chapter 3
+##Chapter 3
+
 *Classes*
 Can be used to create objects with set shapes using:
 - constructor to create a new object array
