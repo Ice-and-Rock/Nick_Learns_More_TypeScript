@@ -112,5 +112,63 @@ interface Category {
 }
 ~~~
 
+Access Modifiers
+Inside a class you can set the types to be visible to three areas: private, protected and public
+- private, only visible inside the class
+- protected, visitble to members in same class and derived classes
+- public, visible to all consumers
+
+You can do this for a few reasons but mostly for keeping data inside classes private (protects sensitive data leaking out without being called in the proper function return eg, persons password or addresses)
+
+~~~
+class Person {
+  public name: string;
+  private age: number;
+  protected address: string;
+
+  constructor(name: string, age: number, address: string) {
+    this.name = name;
+    this.age = age;
+    this.address = address;
+  }
+
+  public greet() {
+    return `Hello, my name is ${this.name}. I am ${this.age} years old.`;
+  }
+}
+
+const person = new Person("John", 30, "New York");
+console.log(person.name);       // Accessible (public)
+// console.log(person.age);     // Error - Not accessible (private)
+// console.log(person.address); // Error - Not accessible (protected)
+console.log(person.greet());    // Accessible (public)
+~~~
+
+# Chapter 4
+Generics <T> 
+Allow you to create reusable components (functions, classes, interfaces) that can work with different types. They provide a way to write flexible and type-safe code by allowing you to specify the type of data that a component will work with when you use it, rather than defining the type directly in the component.
+
+Type Checking Javascript Files 
+- You can do this when functions from external components that are being imported throw errors
+- Done in the Json file: allowJs: true, checkJs: true.
+- You should see typescript adding $ to the beginnings of some lines to check the function contents have the correct types
+
+Adding support for native API's
+- Often occur when you are importing API data in async functions
+- the data doesn't exisit in the current typescript environment 
+- Add "lib" and the types of lib to the Json file 
+
+Adding types for external API's
+- Use a type declaration
+- the easy way to do this is to create a type object after chekcing JSON object in the console/postman so that typescript knows what to look out for
+~~~
+// third-party-api.d.ts
+declare module "third-party-api" {
+  export interface User {
+    id: number;
+    name: string;
+    email: string;
+  }}
+~~~
 
 
