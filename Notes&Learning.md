@@ -38,7 +38,7 @@ When building an interface, you can make certain fields optional using '?'...
 
 These are by default assigned a numerical value when typescript is compiled.
 If you want a literal value to be taken in, you must define the values in the enum
-```enum InventoryItemType {
+~~~enum InventoryItemType {
     Computer = "computer",
     Furniture = "furniture"
 }
@@ -46,10 +46,10 @@ If you want a literal value to be taken in, you must define the values in the en
 interface InventoryItem {
     displayName: string;
     inventoryType: InventoryItemType;
-}```
+}~~~
 
 *A Literal Type*: This does the same as an enum, but easier beacuse it's done in-line using an '|' (or) syntax
-```enum InventoryItemType {
+~~~enum InventoryItemType {
     Computer = "computer",
     Furniture = "furniture"
 }
@@ -57,22 +57,22 @@ interface InventoryItem {
 interface InventoryItem {
     displayName: string;
     inventoryType: "computer" | "furniture";
-}```
+}~~~
 
 Allowing a variable to be a multiple types
 - 'any' type
 OR
 - Union types
-```let origionalCost: number | string;```
-```type Cost = number | string;
-let origionalCost: Cost = 425;```
+~~~let origionalCost: number | string;~~~
+~~~type Cost = number | string;
+let origionalCost: Cost = 425;~~~
 Error reporting:
 - you can use typeof and if statements to create conditional statements, depening what typeScript wants to give you back...
-```if (typeof originalCost === "number") {
+~~~if (typeof originalCost === "number") {
     let cost: number = originalCost;
 } else {
     let x = originalCost;
-}```
+}~~~
 
 #Chapter 3
 *Classes*
@@ -85,17 +85,17 @@ Can be used to create objects with set shapes using:
 convert the class.js file to .ts
 
 all possible properties must be defined at the top of the class for typescript to function properly
-```class InventoryStore {
+~~~class InventoryStore {
   _categories: Category[] = [];
   _items: InventoryItem[] = [];
   _isInitialized: Promise<boolean>;
-}```
+}~~~
 remember you can define type of objects using enums or literal types outside of the class...
-```interface Category {
+~~~interface Category {
   name: string,
   displayName: string,
   subCategories: { name: string, displayName: string }[]
-}```
+}~~~
 
 
 
