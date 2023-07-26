@@ -89,4 +89,11 @@ all possible properties must be defined at the top of the class for typescript t
   _items: InventoryItem[] = [];
   _isInitialized: Promise<boolean>;
 }```
+remember you can define type of objects using enums or literal types outside of the class...
+```interface Category {
+  name: string,
+  displayName: string,
+  subCategories: { name: string, displayName: string }[]
+}```
+
 
