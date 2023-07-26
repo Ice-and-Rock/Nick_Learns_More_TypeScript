@@ -11,7 +11,7 @@ enum InventoryItemType {
 
 interface InventoryItem {
     displayName: string;
-    inventoryType: InventoryItemType;
+    inventoryType: "computer" | "furniture";
     readonly trackingNumber: string;
     createDate: Date;
     originalCost?: number;
@@ -34,7 +34,7 @@ inventoryItem.createDate = new Date();
 
 saveInventoryItem({
     displayName: "MacBook Pro 15 Retina",
-    inventoryType: InventoryItemType.Computer,
+    inventoryType: "computer",
     trackingNumber: "MBP123456",
     createDate: new Date(),
 });

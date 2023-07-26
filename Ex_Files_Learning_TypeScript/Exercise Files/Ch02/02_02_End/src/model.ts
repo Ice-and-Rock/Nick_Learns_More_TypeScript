@@ -11,6 +11,7 @@ interface InventoryItem {
     createDate: Date;
     originalCost?: number;
 
+    // the question mark means it's optional
     addNote?: (note: string) => string;
 }
 
