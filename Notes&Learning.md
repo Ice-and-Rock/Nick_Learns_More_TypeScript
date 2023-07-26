@@ -22,7 +22,7 @@ _An Interface_: allows you to define a type (like an object) then use it through
 
 When building an interface, you can make certain fields optional using '?'...
 
-````interface InventoryItem {
+~~~interface InventoryItem {
     displayName: string;
     inventoryType: string;
     readonly trackingNumber: string;
@@ -32,7 +32,7 @@ When building an interface, you can make certain fields optional using '?'...
     // the question mark above and below means they're optional
     addNote?: (note: string) => string;
 }
-```
+~~~
 
 *An enum*: allows you to define a value with limitied options, such as a drop down menu (with two options)
 
